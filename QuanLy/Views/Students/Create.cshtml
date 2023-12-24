@@ -1,0 +1,48 @@
+﻿@model QuanLy.Models.Student
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="HoTen"></label>
+        <input asp-for="HoTen" class="form-control" />
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GioiTinh">Nam</label>
+        <input style="margin-left : 2em" asp-for="GioiTinh" class="form-check-input" type="checkbox" />
+        <span asp-validation-for="GioiTinh" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Tuoi"></label>
+        <input asp-for="Tuoi" class="form-control" type="number" />
+        <span asp-validation-for="Tuoi" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NgaySinh, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Luong"></label>
+        <input asp-for="Luong" class="form-control" type="number" />
+        <span asp-validation-for="Luong" class="text-danger"></span>
+    </div>
+
+    <!-- Include other fields as needed -->
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+<p>
+    <a asp-action="Index">Back to List</a>
+</p>

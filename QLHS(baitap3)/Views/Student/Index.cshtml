@@ -1,0 +1,37 @@
+﻿@model List<Student>
+
+<h2>Students</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Giới tính</th>
+            <th>Tuổi</th>
+            <th>Ngày Sinh</th>
+            <th>Lương</th>
+        
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.HoTen</td>
+                <td>@(student.GioiTinh ? "Male" : "Female")</td>
+                <td>@student.Tuoi</td>
+                <td>@student.NgaySinh.ToShortDateString()</td>
+                <td>@student.Luong</td>
+              
+                <td>
+                    <a asp-action="Details" asp-route-id="@student.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

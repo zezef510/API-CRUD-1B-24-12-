@@ -1,0 +1,52 @@
+﻿
+@model Student
+
+<h2>Student Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HoTen)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.GioiTinh)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tuoi)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.NgaySinh)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Luong)
+        </dt>
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.GioiTinh)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Tuoi)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+
+
+
+
+        <dt>
+            Actions:
+        </dt>
+        <dd>
+            @Html.ActionLink("Back to List", "Index")
+        </dd>
+    </dl>
+</div>

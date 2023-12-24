@@ -1,0 +1,47 @@
+﻿@model IEnumerable<QuanLy.Models.Student>
+
+<h2>Student List</h2>
+
+<p>
+    <a asp-action="Create">Tạo mới </a> 
+    <br />
+    <a asp-action="Males">Học sinh nam</a> |
+    <a asp-action="Females">Học sinh nữ</a> |
+    <a asp-action="Salary10000">Học sinh có lương là 10.000</a> |
+    <a asp-action="BirthYear2003">Học sinh có năm sinh là 2003</a>
+</p>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>HoTen</th>
+            <th>GioiTinh</th>
+            <th>Tuoi</th>
+            <th>NgaySinh</th>
+            <th>Luong</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.HoTen</td>
+                <td>@(item.GioiTinh ? "Nam" : "Nữ")</td>
+                <td>@item.Tuoi</td>
+                <td>@item.NgaySinh</td>
+                
+                <td>@item.Luong</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
